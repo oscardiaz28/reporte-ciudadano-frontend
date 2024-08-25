@@ -1,0 +1,866 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: "Poppins", "sans-serif";
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* SIDEBAR AND NAVBAR */
+
+.sidebar{
+    position: relative;
+    z-index: 1000;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #024751;
+    min-height: 100vh;
+    width: 28rem;
+    display: none;
+}
+
+.navbar{
+    width: 100%;
+    height: 6rem;
+    background-color: white;
+    box-shadow: 0 1rem 1rem rgba(132, 139, 200, 0.18);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    /* display: none; */
+}
+
+.navbar__menu{
+    border: none;
+    outline: none;
+    font-size: 2.5rem;
+    background-color: transparent;
+    margin-top: .6rem;
+    cursor: pointer;
+}
+
+.navbar__profile{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar__profile--avatar{
+    width: 3.5rem;
+    height: 3.5rem;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.navbar__profile--avatar img{
+    width: 100%;
+    display: block;
+}
+
+.navbar__profile--info{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar__profile--info .name{
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.navbar__profile--info .rol{
+    font-size: 1.2rem;
+}
+
+.sidebar__links{
+    padding: 4.5rem 1.5rem 1.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar__link{
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 1.3rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding: .7rem 1rem;
+    border-radius: .5rem;
+    padding-left: 2rem;
+}
+
+.sidebar__link:last-child{
+    margin-top: 4rem;
+}
+
+.sidebar__link.active{
+    background-color: #09D885;
+    color: black;
+}
+
+.sidebar__link i{
+    font-size: 2.4rem;
+}
+
+.sidebar__top{
+    padding: 0 2rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar__top button{
+    border: none;
+    outline: none;
+    font-size: 2.5rem;
+    background-color: transparent;
+    margin-top: .6rem;
+    cursor: pointer;
+    color: white;
+}
+
+.sidebar__top a{
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* CUSTOM BTN */
+.btn{
+    color: white;
+    padding: 0.6rem 1.6rem;
+    border-radius: .6rem;
+    margin-top: 2rem;
+    display: inline-block;
+}
+.btn--back{
+    background-color: #333;
+}
+
+/* CONTENT */
+
+.content{
+    background-color: #F6F6F6;
+    min-height: 100vh;
+    width: 100%;
+    padding: 9rem 1.5rem 1.5rem;
+}
+
+.content__title{
+    font-size: 2.3rem;
+}
+
+/* DASHBOARD */
+
+.insights{
+    margin-top: 2rem;
+    display: grid;
+    margin-bottom: 4.8rem;
+    gap: 2rem;
+}
+
+.insights > div{
+    background-color: white;
+    padding: 2rem 3rem;
+    box-shadow: 0 1rem 1rem rgba(132, 139, 200, 0.18);
+}
+
+.insights > div > span.card--icon{
+    font-size: 3.5rem;
+    display: inline-block;
+}
+
+.insights > div > span.icon--reports{
+    color: purple;
+}
+
+.insights > div > span.icon--category{
+    color: #09D885;
+}
+
+.insights > div > span.icon--standby{
+    color: #F1AB4E;
+}
+
+.insights .card__info{
+    padding: 1rem 0;
+}
+
+.insights .card__info .name{
+    
+}
+.insights .card__info .quantity{
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+.insights .card__statics .porcent{
+    color: #65CDA9;
+    font-weight: bold;
+}
+
+.dashboard .recent__reports h3{
+    color: #333;
+}
+
+.table--container{
+    overflow-y: auto;
+}
+
+.table--container::-webkit-scrollbar {
+    width: 10px  ; /* Ancho del scrollbar */
+}
+
+.table--container::-webkit-scrollbar-thumb {
+    background-color: #e2e2e2; /* Color del thumb */
+    border-radius: .5rem;
+}
+
+/* Estilo del track (la pista) del scrollbar */
+.table--container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color de fondo del track */
+}
+
+/* Estilo del thumb cuando se pasa el cursor por encima */
+.table--container::-webkit-scrollbar-thumb:hover {
+    background-color: #c2c2c2; /* Color del thumb al pasar el cursor */
+}
+
+
+.table{
+    margin-top: 2rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    overflow-x: scroll;
+}
+
+.table thead th{
+    padding: .5rem 1rem;
+    padding-bottom: 1.6rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(132, 139, 200, 0.18);
+}
+
+.table tbody td{
+    border-bottom: 1px solid rgba(132, 139, 200, 0.18);
+    color: #333;
+    font-size: 1.4rem;
+    padding: 1rem;
+    min-width: 11rem;
+}
+
+.table tbody td .actions{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding-top: 1rem;
+    justify-content: center;
+}
+
+.table tbody td .actions .edit{
+    color: #3983F6;
+    font-weight: bold;
+    font-size: 1.6rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #3983F6;
+    border-radius: .3rem;
+}
+
+.table tbody td .actions .edit:hover{
+    background-color: #3983F6;
+    color: white;
+}
+
+.table tbody td .actions .delete{
+    font-size: 1.6rem;
+    color: #D52A2A;
+    font-weight: bold;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid #D52A2A;
+    justify-content: center;
+    border-radius: .3rem;
+}
+
+.table tbody td .actions .delete:hover{
+    background-color: #D52A2A;
+    color: white;
+}
+
+
+/* REPORTS PAGE */
+
+.reportes .options {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.reportes .options .btn{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    padding: .6rem 1.6rem;
+    border-radius: .5rem;
+    font-family: inherit;
+}
+
+.reportes .options .btn__excel {
+    background-color: #10B882;
+}
+
+.reportes .options .btn__pdf {
+    background-color: #1F2938;
+}
+
+
+/* MAP */
+
+.mapa__container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: calc(100vh - 14.8rem);
+    overflow: hidden;
+}
+
+.mapa__container .incidents{
+    flex-basis: 35%;
+}
+
+.mapa__container .incidents .reports__users{
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+.mapa__container .incidents .reports__users::-webkit-scrollbar{
+    height: 8px;
+}
+
+.mapa__container .incidents .reports__users::-webkit-scrollbar-thumb{
+    background-color: #e2e2e2;
+    border-radius: .5rem;
+}
+
+.mapa__container .incidents .report__item{
+    min-width: 30rem;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: .6rem;
+    box-shadow: 0 1rem 1rem rgba(132, 139, 200, 0.18);
+}
+
+.mapa__container .incidents .report__item .top{
+    font-size: 1.4rem;
+}
+
+.mapa__container .incidents .report__item .top .category{
+    padding-bottom: .8rem;
+    border-bottom: 1px solid #e2e2e2;
+    display: flex;
+    gap: .6rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mapa__container .incidents .report__item .top .category button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.7rem;
+    margin-top: .3rem;
+    cursor: pointer;
+}
+
+
+.mapa__container .incidents .report__item .top .date{
+    font-size: 1.2rem;
+    color: #545454;
+    padding-top: .7rem;
+}
+
+.mapa__container .incidents .report__item .info{
+    margin-top: 1rem;
+    font-size: 1.4rem;
+}
+
+.mapa__container .incidents .report__item .info .ciudadano span{
+    font-weight: 600;
+    color: #545454;
+}
+
+.mapa__container .incidents .report__item .info .ciudadano{
+    font-size: 1.2rem;
+    color: #545454;
+    padding-top: .6rem;
+}
+
+.mapa__container .incidents .report__item .options{
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin-top: 1.3rem;
+}
+
+.mapa__container .incidents .report__item .options .priority{
+    color: white;
+    font-size: 1.1rem;
+    padding: .3rem .8rem;
+    border-radius: .3rem;
+}
+
+.mapa__container .incidents .report__item .options .active{
+    color: white;
+    font-size: 1.1rem;
+    padding: .3rem .8rem;
+    border-radius: .3rem;
+    background-color: #2e4d7b;
+}
+
+.mapa__container .incidents .report__item .options .priority.high--priority{
+    background-color: #D52A2A;
+}
+
+.mapa__container .incidents .filters{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0px .5rem;
+}
+
+.mapa__container .incidents .filters input{
+    width: 100%;
+    font-family: inherit;
+    padding: .6rem 1.5rem;
+    border: 1px solid #e2e2e2;
+    outline: none;
+    border-radius: .4rem;
+}
+
+.mapa__container .incidents .filters input:focus{
+    border: 1px solid rgb(22, 103, 220);
+    box-shadow: 0px 0px 5px rgba(22, 103, 220, 0.1)
+}
+
+.mapa__container .incidents .filters .form__select{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: .6rem;
+}
+
+.mapa__container .incidents .filters .form__select label{
+    font-size: 1.4rem;
+    padding-bottom: .5rem;
+}
+
+.mapa__container .incidents .filters .form__select select{
+    width: 100%; 
+    font-family: inherit;
+    outline: none;
+    border: 1px solid #e2e2e2;
+    padding: .6rem 1.5rem;
+    border-radius: .4rem;
+}
+
+/* 
+.mapa__container .incidents .filters button{ 
+    background-color: white;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    padding: 1rem;
+    border: 1px solid #e2e2e2;
+    cursor: pointer;
+    border-radius: .5rem;
+}
+
+.mapa__container .incidents .filters button.active{
+    color: #024751;
+    font-weight: 500;
+    color: white;
+    background-color: #0a6b4d;
+} */
+
+.mapa__container .mapa{
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border-radius: 1rem;
+    min-height: 45rem;
+}
+
+.mapa__container .mapa .information{
+    background-color: white;
+}
+
+.mapa__container .mapa iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* PAGE USER */
+
+.user__page{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.user__page .map-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: red; */
+}
+
+.user__page .mapa{
+    width: 100%;
+    height: 100%;
+}
+
+.user__page .mapa iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.user__page .search{
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 42rem;
+    padding: 0 2rem;
+}
+
+.user__page .search input{
+    padding: 1rem 1.6rem;
+    width: 100%;
+    border: none;
+    border-radius: .8rem;
+    box-shadow: 0px 1rem 1rem rgba(132, 139, 200, 0.18);
+    font-family: inherit;
+}
+
+.user__page .add {
+    position: absolute;
+    bottom: 6rem;
+    right: 8rem;
+    display: flex;
+    flex-direction:column;
+    gap: 1rem;
+}
+
+.user__page .add button{
+    border: none;
+    font-family: inherit;
+    outline: none;
+    color: white;
+    padding: .8rem 1.6rem;
+    border-radius: 1.3rem;
+    cursor: pointer;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.user__page .add button.location{
+    background-color: #024751;
+}
+
+.user__page .add button.report{
+    background-color: #E60023;
+}
+
+.user__page .overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+/* ALERT AND SWEET ALERT */
+
+.alert{
+    padding: .6rem 1rem;
+    font-size: 1.3rem;
+    border-radius: .4rem;
+}
+
+.alert-danger{
+    background-color: #F8D7DA;
+    color: #721C24;
+    border: 1px solid #ba4954;
+}
+
+.custom-title {
+    font-size: 2rem !important; /* Ajusta el tamaño del título */
+}
+  
+.swal2-html-container {
+    font-size: 1.6rem !important; /* Ajusta el tamaño del contenido */
+}
+
+.swal2-modal{
+    width: 48rem !important;
+}
+
+.swal2-confirm{
+    font-size: 1.2rem;
+}
+
+/* END ALERT AND SWEET ALERT */
+
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.user__page .modal{
+    position: absolute;
+    background-color: white;
+    width: 95%;
+    max-width: 50rem;
+    padding: 2rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: 80%;
+    bottom: 0;
+}
+
+.user__page .modal .close{
+    position: absolute;
+    top: -5.7rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-family: inherit;
+    font-size: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.user__page .modal .top{
+    border-bottom: 1px solid #c2c2c2;
+    padding-bottom: 1rem;
+}
+
+.user__page .modal .top h3{
+    font-size: 1.7rem;
+}
+
+.user__page .modal .top p{
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.user__page .modal .form{
+    padding-top: 2rem;
+}
+
+.user__page .modal .form .form__group{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.user__page .modal .form .form__control{
+    border: 1px solid #cdcdcd;
+    padding: .8rem 1.6rem;
+    border-radius: .5rem;
+}
+
+.user__page .modal .form .form__control--textarea{
+    min-height: 8rem;
+    font-family: inherit;
+}
+
+.user__page .modal .form .form__control--select{
+    font-family: inherit;
+}
+
+.user__page .modal .form .form__options{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .7rem;
+    padding-top: 1.3rem;
+}
+
+.user__page .modal .form .form__options button{
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: white;
+    padding: .6rem 1.6rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.user__page .modal .form .form__options input{
+    border: none;
+    outline: none;
+    background-color: #1667DC;
+    color: white;
+    padding: .6rem 1.6rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+
+
+@media screen and (min-width: 640px) {
+    .insights{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .navbar{
+        position: fixed;
+        justify-content: flex-end;
+        z-index: 100;
+    }
+    .navbar__menu{
+        display: none;
+    }
+    .sidebar{
+        display: block;
+    }
+    .sidebar__top button{
+        display: none;
+    }
+    .main{
+        padding-left: 28rem;
+    }
+    .content{
+        padding: 1.5rem;
+        padding-top: 9rem;
+    }
+    .insights{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .insights{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    .mapa__container{
+        flex-direction: row;
+        gap: 2rem;
+        height: calc(100vh - 14.8rem);
+        overflow: hidden;
+    }
+
+    .mapa__container .incidents{
+        overflow-y: auto;
+    }
+
+    .mapa__container .incidents::-webkit-scrollbar{
+        width: 8px;
+    }
+
+    .mapa__container .incidents::-webkit-scrollbar-thumb{
+        background-color: #e2e2e2;
+        border-radius: 1rem;
+    }
+
+    .mapa__container .incidents .reports__users{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .mapa__container .incidents .report__item{
+        min-width: unset;
+    }
+
+    .mapa__container .mapa{
+        min-height: unset;
+    }
+
+
+}

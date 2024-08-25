@@ -1,0 +1,25 @@
+<app-sidebar></app-sidebar>
+
+<main class="main">
+    <div class="main_container">
+        <nav class="navbar"> 
+            <button class="navbar__menu">
+                <i class='bx bx-menu'></i>
+            </button>
+
+            <div class="navbar__profile">
+                <div class="navbar__profile--avatar">
+                    <img src="https://placehold.co/200x200" alt="">
+                </div>
+                <div class="navbar__profile--info">
+                    <p class="name">John Doe</p>
+                    <small class="rol">Admin</small>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</main>

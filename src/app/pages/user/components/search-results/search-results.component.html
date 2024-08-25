@@ -1,0 +1,12 @@
+<div class="search__alert" *ngIf="isLoadingPlace">
+    <p>Cargando</p>
+    <span>Espere por favor...</span>
+</div>
+
+<ul class="address__container" *ngIf="places.length > 0" [ngClass]="!stateSearchResult ? 'hide' : ''">
+    <li class="address__item" *ngFor="let place of places" (click)="flyTo(place)">
+        <p>{{place.name}}</p>
+        <p>{{place.address}}</p>
+    </li>
+</ul>
+

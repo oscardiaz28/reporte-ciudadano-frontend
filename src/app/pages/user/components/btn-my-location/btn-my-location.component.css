@@ -1,0 +1,11 @@
+.btn{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #114FCB;
+    position: absolute;
+    top: 0;
+    right: 6rem;
+    padding: .6rem 1.6rem;
+    z-index: 100;
+}

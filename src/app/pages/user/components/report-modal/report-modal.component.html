@@ -1,0 +1,60 @@
+<div class="add">
+    <button class="btn report" (click)="sendReport()">
+        <i class='bx bxs-bell-ring' ></i>
+        Reportar incidente
+    </button>
+</div>
+
+
+<div class="overlay hide" #modal>
+
+    <div class="modal">
+        <button class="close" >
+            <i class='bx bx-chevron-down' ></i>
+        </button>
+
+        <div class="top">
+            <h3>Reporte de Incidente</h3>
+            <p>Marca la ubicación en el mapa y envia el reporte</p>
+        </div>
+
+        <form action="" class="form" [formGroup]="form" #formElement (ngSubmit)="handleSubmit()" enctype="multipart/form-data">
+            <div class="form__group">
+                <label for="">DNI</label>
+                <input type="number" name="dni" formControlName='dni' class="form__control">
+            </div>
+            <div class="form__group">
+                <label for="">Descripción</label>
+                <textarea id="" name="descripcion" formControlName='descripcion' class="form__control form__control--textarea"></textarea>
+            </div>
+            <div class="form__group">
+                <label for="">Tipo</label>
+                <select name="tipo" formControlName="tipo" id="" class="form__control form__control--select">
+                    <option value="">--Selecciona el tipo de incidente--</option>
+                    <option value="1">Incendio</option>
+                    <option value="2">Asistencia Medica</option>
+                    <option value="3">Accidente de Tránsito</option>
+                    <option value="4">Congestión Vehicular</option>
+                </select>
+            </div>
+            <div class="form__group">
+                <label for="">Prioridad</label>
+                <select name="prioridad" formControlName="prioridad" id="" class="form__control form__control--select">
+                    <option value="">--Selecciona una prioridad--</option>
+                    <option value="1">Prioridad Alta</option>
+                    <option value="2">Prioridad Media</option>
+                    <option value="3">Prioridad Baja</option>
+                </select>
+            </div>
+            <div class="form__group">
+                <label for="">Evidencia</label>
+                <input type="file" name="evidencia" class="form__control" formControlName="evidencia" (change)="onFileSelect($event)">
+            </div>
+
+            <div class="form__options" id="optionsDiv">
+                <button type="button"  (click)="hideModal()" >Cancelar</button>
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+</div>

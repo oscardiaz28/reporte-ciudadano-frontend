@@ -1,0 +1,21 @@
+.popup-container {
+    position: absolute;
+    background: white;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .popup-bubble {
+    position: relative;
+  }
+  
+  .popup-bubble-anchor {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+  }

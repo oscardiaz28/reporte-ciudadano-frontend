@@ -1,0 +1,9 @@
+<p>search-bar works!</p>
+<div class="search-container">
+
+    <input type="text" value="Cargando..." id="inputAddress" disabled />
+    <input type="text" placeholder="Buscar direccion..." [(ngModel)]="searchInput"  (input)="handleQuery($event)" id=inputSearch>
+
+    <app-search-results></app-search-results>
+
+</div>

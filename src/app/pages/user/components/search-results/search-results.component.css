@@ -1,0 +1,35 @@
+.search__alert{
+    width: 100%;
+    background-color: #CCE5FF;
+    padding: .5rem;
+    text-align: center;
+    border-radius: .6rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    border: 1px solid hsl(211, 39%, 77%);
+}
+
+.address__container{
+    margin-top: 1rem;
+}
+
+.hide{
+    display: none;
+}
+
+.address__item{
+    font-size: 1.2rem;
+    margin-bottom: .6rem;
+    padding: .6rem 1rem;
+    border-radius: .6rem;
+    border: 1px solid #eee;
+}
+.address__item:hover{
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.address__item p:first-of-type{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
